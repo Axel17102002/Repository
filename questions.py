@@ -51,7 +51,8 @@ for _ in range(3):
             break
         else: 
             print("Respuesta incorrecta.")
-            score -= 0.5
+            if score > 0:
+                score -= 0.5
     else:
          # Si el usuario no responde correctamente después de 2 intentos,
          # se muestra la respuesta correcta
