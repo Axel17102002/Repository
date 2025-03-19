@@ -22,7 +22,7 @@ answers = [
 
 # Índice de la respuesta correcta para cada pregunta, en el mismo orden que las preguntas
 correct_answers_index = [1, 2, 0, 3, 1]
-
+score = 0
 # El usuario deberá contestar 3 preguntas
 for _ in range(3):
     # Se selecciona una pregunta aleatoria
@@ -38,7 +38,7 @@ for _ in range(3):
         user_answer = input("Respuesta: ")
         if user_answer.isdigit(): #Verificamos que se este ingresando un numero
             user_answer = int(user_answer) - 1 # Convertimos a entero y ajustamos el índice
-            if user_answer < 0 or user_answer >3:
+            if user_answer < 0 or user_answer >3: #Verifico que la respuesta este dentro del rango
                 print("Respuesta no valida. ")
                 sys.exit(1) # Terminamos el programa con exit status 1
         else:
@@ -47,14 +47,17 @@ for _ in range(3):
         # Se verifica si la respuesta es correcta
         if user_answer == correct_answers_index[question_index]:
             print("¡Correcto!")
+            score += 1
             break
         else: 
             print("Respuesta incorrecta.")
+            score -= 0.5
     else:
          # Si el usuario no responde correctamente después de 2 intentos,
          # se muestra la respuesta correcta
          print("Incorrecto. La respuesta correcta es:")
          print(answers[question_index][correct_answers_index[question_index]])
-    
     # Se imprime un blanco al final de la pregunta
     print()
+#Se imprime el puntaje
+print("El puntaje fue: ",score)
