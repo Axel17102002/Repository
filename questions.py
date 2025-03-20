@@ -26,7 +26,7 @@ score = 0
 questions_to_ask = random.choices(list(zip(questions, answers, correct_answers_index)), k=3)
 
 for i in range(3):
-    print(questions_to_ask[i][0])  # Imprime la pregunta
+    print(questions_to_ask[i][0])  # Imprime la preguntagit 
     for a in range(len(questions_to_ask[i][1])):  # Calcula `la cantidad de respuestas a imprimir len()`
         print(f"{a + 1}. {questions_to_ask[i][1][a]}")  # Imprime respuestas numeradas
     
