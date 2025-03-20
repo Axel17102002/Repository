@@ -22,10 +22,18 @@ answers = [
 
 # Índice de la respuesta correcta para cada pregunta, en el mismo orden que las preguntas
 correct_answers_index = [1, 2, 0, 3, 1]
-score = 0
-questions_to_ask = random.choices(list(zip(questions, answers, correct_answers_index)), k=3)
 
-for i in range(3):
+score = 0 #Variable para contar la puntuacion
+
+k = 3 #Cantidad de preguntas a hacer
+
+"""
+Zip combinara las listas de questions, answers y correct_answer_index
+Y random.sample(..., k) selecciona aleatoriamente k=5 elementos de la lista sin repetición.
+"""
+questions_to_ask = random.sample(list(zip(questions, answers, correct_answers_index)), k) 
+
+for i in range(k):
     print(questions_to_ask[i][0])  # Imprime la pregunta
     for a in range(len(questions_to_ask[i][1])):  # Calcula la cantidad de respuestas a imprimir len()
         print(f"{a + 1}. {questions_to_ask[i][1][a]}")  # Imprime las respuestas numeradas
