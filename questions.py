@@ -26,9 +26,9 @@ score = 0
 questions_to_ask = random.choices(list(zip(questions, answers, correct_answers_index)), k=3)
 
 for i in range(3):
-    print(questions_to_ask[i][0])  # Imprime la preguntagit 
-    for a in range(len(questions_to_ask[i][1])):  # Calcula `la cantidad de respuestas a imprimir len()`
-        print(f"{a + 1}. {questions_to_ask[i][1][a]}")  # Imprime respuestas numeradas
+    print(questions_to_ask[i][0])  # Imprime la pregunta
+    for a in range(len(questions_to_ask[i][1])):  # Calcula la cantidad de respuestas a imprimir len()
+        print(f"{a + 1}. {questions_to_ask[i][1][a]}")  # Imprime las respuestas numeradas
     
     # El usuario tiene 2 intentos para responder correctamente
     for intento in range(2):
@@ -44,17 +44,17 @@ for i in range(3):
         # Se verifica si la respuesta es correcta
         if user_answer == questions_to_ask[i][2]:
             print("¡Correcto!")
-            score += 1
+            score += 1 #Si es correcta sumo 1
             break
         else: 
             print("Respuesta incorrecta.")
-            if score > 0:
-                score -= 0.5
+            if score > 0: # Para que no de un puntaje negativo
+                score -= 0.5 #Resto 0.5 si es incorrecta
     else:
          # Si el usuario no responde correctamente después de 2 intentos,
          # se muestra la respuesta correcta
          print("Incorrecto. La respuesta correcta es:")
-         print(questions_to_ask[i][1][questions_to_ask[i][2]])
+         print(questions_to_ask[i][1][questions_to_ask[i][2]]) #Imprimo la respuesta correcta luego de los dos intentos fallidos
     # Se imprime un blanco al final de la pregunta
     print()
 #Se imprime el puntaje
