@@ -54,6 +54,7 @@ for i in range(k):
             print("¡Correcto!")
             score += 1 #Si es correcta sumo 1
             break
+        #Si se ingreso una respuesta valida pero es incorrecta
         else: 
             print("Respuesta incorrecta.")
             if score > 0: # Para que no de un puntaje negativo
@@ -61,8 +62,7 @@ for i in range(k):
     else:
          # Si el usuario no responde correctamente después de 2 intentos,
          # se muestra la respuesta correcta
-         print("Incorrecto. La respuesta correcta es:")
-         print(questions_to_ask[i][1][questions_to_ask[i][2]]) #Imprimo la respuesta correcta luego de los dos intentos fallidos
+         print("Incorrecto. La respuesta correcta es: ",questions_to_ask[i][1][questions_to_ask[i][2]]) #Imprimo la respuesta correcta luego de los dos intentos fallidos
     # Se imprime un blanco al final de la pregunta
     print()
 #Se imprime el puntaje
